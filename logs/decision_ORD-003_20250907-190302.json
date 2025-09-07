@@ -1,0 +1,49 @@
+{
+  "order_id": "ORD-003",
+  "incident_type": "item_out_of_stock",
+  "chain_of_thought": [
+    {
+      "step": 1,
+      "thought": "Checking merchant status and applying notification policy if needed",
+      "action": "call_tool:get_merchant_status",
+      "observation": {
+        "prep_delay_min": 10,
+        "accepts_orders": true
+      }
+    },
+    {
+      "step": 2,
+      "thought": "Collecting evidence and computing tentative refund amount",
+      "action": "call_tool:collect_evidence + compute_amount",
+      "observation": {
+        "evidence": "omitted_in_log",
+        "tentative_amount": 100.0
+      }
+    },
+    {
+      "step": 3,
+      "thought": "Issuing refund or partial credit per policy thresholds",
+      "action": "call_tool:issue_refund",
+      "observation": {
+        "amount": 100.0,
+        "response": {
+          "ok": false,
+          "reason": "Refund exceeds policy cap"
+        }
+      }
+    },
+    {
+      "step": 4,
+      "thought": "Produce final summary; degraded mode used",
+      "action": "llm_summary_fallback",
+      "observation": {
+        "degraded": true
+      }
+    }
+  ],
+  "escalation": {
+    "to_human": false
+  },
+  "policy_version": "1.0.0",
+  "timestamp": "2025-09-07T19:03:02.355862"
+}

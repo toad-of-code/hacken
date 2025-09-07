@@ -1,0 +1,63 @@
+description,category
+Merchant reported 45 min prep delay drivers are waiting.,merchant_backlog
+Merchant kitchen slow 30 min backlog,merchant_backlog
+Merchant overwhelmed with high volume,merchant_backlog
+Merchant under heavy load causing slow prep,merchant_backlog
+Prep time high during rush hour,merchant_backlog
+Prep time estimated 50 minutes causing driver wait,merchant_backlog
+Delay due to kitchen cleaning backlog,merchant_backlog
+Orders piling up merchant cannot keep up,merchant_backlog
+High prep time warning triggered,merchant_backlog
+Kitchen queue long waiting time,merchant_backlog
+Merchant very busy long order prep,merchant_backlog
+Driver reporting merchant still preparing after 40 mins,merchant_backlog
+Merchant M999 is closed unexpectedly during business hours.,merchant_closed
+Shop shut early without notice,merchant_closed
+Store closed due to holiday,merchant_closed
+Shop not accepting any new orders,merchant_closed
+Merchant offline on system,merchant_closed
+Store reported unavailable today,merchant_closed
+Merchant closed sign displayed on app,merchant_closed
+Merchant cancelled order because kitchen is shut,merchant_closed
+Store went offline unexpectedly,merchant_closed
+Merchant cancelled due to kitchen maintenance,merchant_closed
+Customer reports missing drink from order.,item_out_of_stock
+Unavailable item in cart suggest replacement,item_out_of_stock
+Item not available suggested replacement not accepted,item_out_of_stock
+Customer says fries missing,item_out_of_stock
+Rice bowl unavailable choose alternative,item_out_of_stock
+Dessert not available substitute requested,item_out_of_stock
+Customer wants refund for missing dish,item_out_of_stock
+Menu item out of stock mid-order,item_out_of_stock
+Dessert not available and removed from order,item_out_of_stock
+Side dish missing from final delivery,item_out_of_stock
+Driver broke down cannot complete delivery.,driver_issue
+Driver idle for 20 minutes near merchant,driver_issue
+Driver stuck in traffic ETA very high,driver_issue
+Driver unresponsive cannot contact,driver_issue
+Driver phone switched off cannot be reached,driver_issue
+Driver went to wrong location,driver_issue
+Driver requested reassignment due to delay,driver_issue
+Driver vehicle breakdown reported,driver_issue
+Driver struck in rain jam ETA delayed,driver_issue
+Driver not responding to calls or chat for 15 minutes,driver_issue
+Customer says packaging is damaged and food spilled.,packaging_issue
+Leak in packaging refund requested,packaging_issue
+Spilled drink in packaging,packaging_issue
+Food box crushed needs refund,packaging_issue
+Container lid loose spillage reported,packaging_issue
+Food arrived in bad condition,packaging_issue
+Packaging torn during transit,packaging_issue
+Customer requests replacement due to damaged food,packaging_issue
+Bag leaked sauce spilled all over,packaging_issue
+Meal delivered with torn bag,packaging_issue
+Payment failed twice for this order.,payment_issue
+Refund requested due to double charge,payment_issue
+Transaction failed payment deducted,payment_issue
+Payment gateway timeout order not confirmed,payment_issue
+Refund delayed after cancellation,payment_issue
+Customer overcharged for meal,payment_issue
+Wrong amount charged needs adjustment,payment_issue
+Refund requested due to wrong bill amount,payment_issue
+Charged twice for same order,payment_issue
+Payment deducted but order not confirmed,payment_issue

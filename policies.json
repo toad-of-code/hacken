@@ -1,0 +1,21 @@
+{
+  
+  "max_refund_amount": 50,
+
+  "max_prep_delay_before_notify": 30,
+
+  "max_prep_delay_before_escalation": 60,
+
+  "max_traffic_delay_before_reroute": 20,
+
+  "escalation_rules": {
+    "customer_unreachable": true,
+    "fraud_suspected": true,
+    "manual_override_requested": true
+  },
+
+  "reroute_allowed_merchants": ["M129_ALT1", "M129_ALT2"],
+
+  "policy_version": "1.0.0",
+  "last_updated": "2025-09-05"
+}
