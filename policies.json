@@ -1,21 +1,23 @@
 {
-  
-  "max_refund_amount": 50,
-
-  "max_prep_delay_before_notify": 30,
-
-  "max_prep_delay_before_escalation": 60,
-
-  "max_traffic_delay_before_reroute": 20,
-
+  "auto_refund_min_amount": 0,
+  "auto_refund_max_amount": 500,
+  "auto_refund_for_missing_item": true,
+  "refund_percent_cap": 25,
+  "refund_flat_amount": 100,
+  "missing_item_unit_price_fallback": 150,
+  "max_prep_delay_before_notify": 15,
+  "max_prep_delay_before_reassign": 30,
+  "check_traffic_after_reassign": true,
+  "auto_rebook_to_alternative": false,
   "escalation_rules": {
     "customer_unreachable": true,
     "fraud_suspected": true,
     "manual_override_requested": true
   },
-
-  "reroute_allowed_merchants": ["M129_ALT1", "M129_ALT2"],
-
+  "reroute_allowed_merchants": [
+    "M129_ALT1",
+    "M129_ALT2"
+  ],
   "policy_version": "1.0.0",
-  "last_updated": "2025-09-05"
+  "last_updated": "2025-09-07"
 }
