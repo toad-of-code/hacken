@@ -1,0 +1,67 @@
+{
+  "error": "2 validation errors for ThoughtStep\nobservation.dict[str,any]\n  Input should be a valid dictionary [type=dict_type, input_value=637.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\nobservation.str\n  Input should be a valid string [type=string_type, input_value=637.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+  "failed_incident_data": {
+    "order_id": "ORD-3",
+    "merchant_id": "M121",
+    "type": "packaging_issue",
+    "description": "Customer reported leaking soup.",
+    "order_total": 850.0,
+    "merchant_status": {
+      "prep_delay_min": 10,
+      "accepts_orders": true
+    },
+    "prep_delay_min": 10,
+    "driver_idle_min": 0,
+    "available_time_min": 10
+  },
+  "failed_steps_data": [
+    {
+      "step": 1,
+      "thought": "Decided to call tool: collect_incident_evidence",
+      "action": "call_tool:collect_incident_evidence",
+      "observation": {
+        "evidence_type": "photo",
+        "photo_url": "http://example.com/evidence_ORD-3.jpg",
+        "verified": true
+      }
+    },
+    {
+      "step": 2,
+      "thought": "Decided to call tool: compute_refund_amount",
+      "action": "call_tool:compute_refund_amount",
+      "observation": 637.5
+    },
+    {
+      "step": 3,
+      "thought": "Decided to call tool: calculate_and_issue_refund",
+      "action": "call_tool:calculate_and_issue_refund",
+      "observation": {
+        "ok": false,
+        "reason": "Calculated refund of 637.50 exceeds auto-refund cap (500). Manual approval required."
+      }
+    },
+    {
+      "step": 4,
+      "thought": "Decided to call tool: create_support_ticket",
+      "action": "call_tool:create_support_ticket",
+      "observation": {
+        "ticket_id": "T-ORD-3",
+        "status": "OPEN",
+        "issue_type": "packaging_issue",
+        "summary": "Customer reported leaking soup. Refund of 637.50 exceeds auto-refund cap (500). Manual approval required."
+      }
+    },
+    {
+      "step": 5,
+      "thought": "Performed self-check on LLM plan pre-execution.",
+      "action": "policy_self_check",
+      "observation": {
+        "passed": false
+      }
+    }
+  ],
+  "failed_escalation_data": {
+    "to_human": true
+  },
+  "failed_summary": "The support ticket has already been created as the final action in the previous step, as required by the rules. No further actions are needed. The incident is now escalated for manual review."
+}

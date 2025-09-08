@@ -1,0 +1,17 @@
+# Machine Learning & Data Handling
+pandas
+scikit-learn
+numpy
+joblib
+
+# LangChain & LangGraph Core Components
+langchain-core
+langgraph
+langchain-mistralai
+
+# Utilities
+python-dotenv
+beautifulsoup4
+Markdown
+nest-asyncio
+ttkthemes

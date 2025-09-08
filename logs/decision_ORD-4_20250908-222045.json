@@ -1,0 +1,40 @@
+{
+  "order_id": "ORD-4",
+  "incident_type": "driver_issue",
+  "chain_of_thought": [
+    {
+      "step": 1,
+      "thought": "Decided to call tool: collect_incident_evidence",
+      "action": "call_tool:collect_incident_evidence",
+      "observation": {
+        "evidence_type": "none",
+        "error": "No evidence available for this incident type."
+      }
+    },
+    {
+      "step": 2,
+      "thought": "Decided to call tool: create_support_ticket",
+      "action": "call_tool:create_support_ticket",
+      "observation": {
+        "ticket_id": "T-ORD-4",
+        "status": "OPEN",
+        "issue_type": "driver_issue",
+        "summary": "Driver ate my food."
+      }
+    },
+    {
+      "step": 3,
+      "thought": "Performed self-check on LLM plan pre-execution.",
+      "action": "policy_self_check",
+      "observation": {
+        "passed": false
+      }
+    }
+  ],
+  "escalation": {
+    "to_human": true
+  },
+  "final_summary": "The support ticket T-ORD-4 has already been created and escalated successfully. No further actions are required, as per the rules. If you need additional assistance, please provide a new incident.",
+  "policy_version": "1.3.1",
+  "timestamp": "2025-09-08T22:20:45.006478"
+}

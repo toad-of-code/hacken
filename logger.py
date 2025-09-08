@@ -49,12 +49,12 @@ def save_decision_trace(
         with open(filename, "w", encoding="utf-8") as f:
             f.write(trace.model_dump_json(indent=2))
 
-        print(f"✅ Decision trace saved successfully: {filename}")
+        print(f" Decision trace saved successfully: {filename}")
         return filename
     
     except Exception as e:
         # If validation or saving fails, save a raw log for debugging
-        print(f"❌ [ERROR] Failed to save decision trace for order {order_id}: {e}")
+        print(f" [ERROR] Failed to save decision trace for order {order_id}: {e}")
         
         fallback_file = os.path.join(LOG_DIR, f"FAILED_{order_id}_{ts}.json")
         try:
@@ -67,8 +67,8 @@ def save_decision_trace(
                     "failed_summary": final_summary,
                 }
                 json.dump(fallback_data, f, indent=2)
-            print(f"⚠️  Fallback log for failed trace saved: {fallback_file}")
+            print(f"  Fallback log for failed trace saved: {fallback_file}")
         except Exception as fallback_e:
-            print(f"🚨 [CRITICAL] Could not even save a fallback log for order {order_id}: {fallback_e}")
+            print(f" [CRITICAL] Could not even save a fallback log for order {order_id}: {fallback_e}")
             
         return None

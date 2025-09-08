@@ -2,22 +2,44 @@
   "auto_refund_min_amount": 0,
   "auto_refund_max_amount": 500,
   "auto_refund_for_missing_item": true,
-  "refund_percent_cap": 25,
+  "refund_full_amount_for_missing_item": true,
+  "refund_percent_cap": 75,
   "refund_flat_amount": 100,
   "missing_item_unit_price_fallback": 150,
-  "max_prep_delay_before_notify": 15,
-  "max_prep_delay_before_reassign": 30,
-  "check_traffic_after_reassign": true,
-  "auto_rebook_to_alternative": false,
+
+  "min_prep_delay_before_notify": 15,             
+  "min_prep_delay_for_temp_task_min": 20,         
+  "max_prep_delay_before_reassign": 30,           
+  "max_prep_delay_before_find_alternatives": 60,  
+
+  
+  "check_traffic_after_reassign": true,           
+  "free_old_driver_after_reassign": true,         
+
+  
+  "auto_rebook_to_alternative": true,             
+  "reroute_allowed_merchants": ["M129_ALT1", "M129_ALT2"],
+
+  
+  "notification_rules": {
+    "consolidate_notifications": true,            
+    "consolidation_window_sec": 60,              
+    "include_resolution_summary": true,          
+    "customer_message_priority": [
+      "refund_processed",
+      "driver_reassigned",
+      "alt_merchant_found",
+      "prep_delay_notified"
+    ]
+  },
+
   "escalation_rules": {
     "customer_unreachable": true,
     "fraud_suspected": true,
-    "manual_override_requested": true
+    "manual_override_requested": true,
+    "contradictory_data_detected": true
   },
-  "reroute_allowed_merchants": [
-    "M129_ALT1",
-    "M129_ALT2"
-  ],
-  "policy_version": "1.0.0",
-  "last_updated": "2025-09-07"
+
+  "policy_version": "1.3.1",
+  "last_updated": "2025-09-08"
 }
